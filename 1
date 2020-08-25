@@ -21,4 +21,13 @@ public class AopUtils {
     String c = joinPoint.getSignature().getName();
     System.out.println("前置消息执行"+c);
   }
+  
+  @Around("execution(* com.glaway.hahaha.chooseManage.controller.SubstituteManageController.*(..))")
+  public void goAop(JoinPoint joinPoint){
+    String c = joinPoint.getSignature().getName();
+    System.out.println("分支消息执行"+c);
+	
+	public void goAop3(JoinPoint joinPoint){
+	    System.out.println("分支第四次提交"+c);
+	}
 }
