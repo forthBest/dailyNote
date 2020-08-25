@@ -1,1 +1,18 @@
-getstart
+
+package com.hahahaha.offline.util;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+
+@Aspect
+@Component
+public class AopUtils {
+  @Before("execution(* com.glaway.hahaha.chooseManage.controller.SubstituteManageController.*(..))")
+  public void goAop(JoinPoint joinPoint){
+    String c = joinPoint.getSignature().getName();
+    System.out.println("前置消息执行"+c);
+  }
+}
